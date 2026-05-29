@@ -13,8 +13,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "SF Mono", Consolas, monospace;
 }
 
 * {
@@ -40,7 +40,7 @@ body {
     radial-gradient(circle at top right, rgba(229, 221, 210, 0.72), transparent 25%),
     linear-gradient(180deg, #f2efea 0%, #ebe7e0 100%);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
   forced-color-adjust: none;
 }
 
