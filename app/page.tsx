@@ -85,7 +85,7 @@ export default async function Home() {
                       alt={item.name}
                       width={700}
                       height={700}
-                      className="relative z-10 h-[100%] w-[100%] object-contain drop-shadow-[0_18px_24px_rgba(125,101,83,0.2)] transition duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.9]"
+                      className="relative z-10 h-[100%] w-[100%] object-contain drop-shadow-[0_18px_24px_rgba(125,101,83,0.2)] transition duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.7]"
                     />
                   ) : (
                     <span className="text-sm font-medium text-neutral-400">
