@@ -1,6 +1,7 @@
 import RequestForm from "@/components/RequestForm";
 import { supabase } from "@/lib/supabase";
 
+
 type ClosetItem = {
   id: string;
   name: string;
@@ -10,6 +11,7 @@ type ClosetItem = {
   status: string;
   image_url: string | null;
 };
+
 
 export default async function Home() {
   const { data: clothes, error } = await supabase

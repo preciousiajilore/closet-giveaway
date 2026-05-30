@@ -10,12 +10,16 @@ type ClothingItem = {
   condition: string;
   category: string;
   status: string | null;
+  image_url: string | null;
 };
+
+
 
 async function getItems() {
   const { data, error } = await supabaseAdmin
     .from("items")
-    .select("id, name, size, condition, category, status")
+    .select("id, name, size, condition, category, status, image_url")
+    .eq("status", "Available")
     .order("name", { ascending: true });
 
   if (error) {
@@ -72,10 +76,22 @@ export default async function Home() {
                 key={item.id}
                 className="glass-panel group rounded-[2rem] p-4 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_rgba(98,86,73,0.16)] sm:p-5"
               >
-                <div className="mb-5 flex aspect-[4/3] items-center justify-center rounded-[1.5rem] border border-white/85 bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(243,238,231,0.5))]">
-                  <span className="text-sm font-medium text-neutral-400">
-                    Photo coming soon
-                  </span>
+                <div className="relative mb-5 flex aspect-[3/4] items-center justify-center overflow-hidden rounded-[1.5rem] border border-white/85 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(239,233,225,0.72)_55%,rgba(231,224,215,0.55)_100%)]">
+                  <div className="absolute inset-x-[16%] bottom-[10%] h-8 rounded-full bg-[rgba(120,96,78,0.16)] blur-2xl" />
+
+                  {item.image_url ? (
+                    <img
+                      src={item.image_url}
+                      alt={item.name}
+                      width={700}
+                      height={700}
+                      className="relative z-10 h-[100%] w-[100%] object-contain drop-shadow-[0_18px_24px_rgba(125,101,83,0.2)] transition duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.9]"
+                    />
+                  ) : (
+                    <span className="text-sm font-medium text-neutral-400">
+                      Photo coming soon
+                    </span>
+                  )}
                 </div>
 
                 <div className="mb-4 flex items-start justify-between gap-4">
