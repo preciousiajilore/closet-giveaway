@@ -1,4 +1,5 @@
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import ClaimButton from "@/components/ClaimButton";
 
 export const dynamic = "force-dynamic";
 
@@ -103,45 +104,55 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
                 key={request.id}
                 className="glass-panel rounded-[2rem] p-5 sm:p-6"
               >
-                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-neutral-400">
-                      {request.status}
-                    </p>
-
-                    <h2 className="text-2xl font-semibold tracking-[-0.04em] text-neutral-950">
-                      {request.item_name}
-                    </h2>
-
-                    <div className="mt-4 space-y-2 text-sm leading-6 text-neutral-700">
-                      <p>
-                        <span className="font-semibold text-neutral-950">
-                          Name:
-                        </span>{" "}
-                        {request.requester_name}
+                <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-neutral-400">
+                        {request.status}
                       </p>
 
-                      <p>
-                        <span className="font-semibold text-neutral-950">
-                          Contact:
-                        </span>{" "}
-                        {request.requester_contact}
-                      </p>
+                      <h2 className="text-2xl font-semibold tracking-[-0.04em] text-neutral-950">
+                        {request.item_name}
+                      </h2>
 
-                      {request.message ? (
+                      <div className="mt-4 space-y-2 text-sm leading-6 text-neutral-700">
                         <p>
                           <span className="font-semibold text-neutral-950">
-                            Message:
+                            Name:
                           </span>{" "}
-                          {request.message}
+                          {request.requester_name}
                         </p>
-                      ) : null}
+
+                        <p>
+                          <span className="font-semibold text-neutral-950">
+                            Contact:
+                          </span>{" "}
+                          {request.requester_contact}
+                        </p>
+
+                        {request.message ? (
+                          <p>
+                            <span className="font-semibold text-neutral-950">
+                              Message:
+                            </span>{" "}
+                            {request.message}
+                          </p>
+                        ) : null}
+                      </div>
                     </div>
+
+                    <p className="text-sm text-neutral-500">
+                      {new Date(request.created_at).toLocaleString()}
+                    </p>
                   </div>
 
-                  <p className="text-sm text-neutral-500">
-                    {new Date(request.created_at).toLocaleString()}
-                  </p>
+                  <div className="flex justify-start md:justify-end">
+                    <ClaimButton
+                      requestId={request.id}
+                      itemName={request.item_name}
+                      requestStatus={request.status}
+                    />
+                  </div>
                 </div>
               </article>
             ))}
