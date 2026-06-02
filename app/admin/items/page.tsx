@@ -1,5 +1,6 @@
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
-import { addItem, archiveItem, markItemAvailable, markItemClaimed } from "./actions";
+import { addItem, markItemAvailable, markItemClaimed } from "./actions";
+import ArchiveItemButton from "@/components/ArchiveItemButton";
 
 
 export const dynamic = "force-dynamic";
@@ -212,14 +213,11 @@ export default async function AdminItemsPage({
                       Mark claimed
                     </button>
                   </form>
-                  <form action={archiveItem.bind(null, item.id)}>
-                    <button 
-                      type="submit"
-                      className="w-full rounded-full bg-[#1659E0] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#03045e]"
-                    >
-                      Archive item
-                    </button>
-                  </form>
+                  <ArchiveItemButton
+                    itemId={item.id}
+                    itemName={item.name}
+                    itemStatus={item.status}
+                  />
                 </div>
               </article>
             ))}

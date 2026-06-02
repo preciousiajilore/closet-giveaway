@@ -38,7 +38,8 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
             </h1>
 
             <p className="mt-4 text-sm leading-7 text-neutral-600 sm:text-base">
-              Where's your wristband at? Add your admin key to the URL to review clothing requests.
+              Where&apos;s your wristband at? Add your admin key to the URL to
+              review clothing requests.
             </p>
           </div>
         </section>
