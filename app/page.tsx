@@ -119,7 +119,7 @@ export default async function Home() {
                   </p>
                 </div>
 
-                <RequestForm itemName={item.name} />
+                <RequestForm itemId = {item.id} itemName={item.name} />
               </article>
             ))}
           </div>

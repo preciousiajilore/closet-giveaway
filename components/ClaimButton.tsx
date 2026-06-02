@@ -5,11 +5,12 @@ import { approveRequest } from "@/app/admin/actions";
 
 type ClaimButtonProps = {
   requestId: string;
+  itemId: string | null;
   itemName: string;
   requestStatus: string;
 };
 
-export default function ClaimButton({ requestId, itemName, requestStatus }: ClaimButtonProps) {
+export default function ClaimButton({ requestId, itemId, itemName, requestStatus }: ClaimButtonProps) {
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState(requestStatus);
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function ClaimButton({ requestId, itemName, requestStatus }: Clai
 
   function handleApprove() {
     startTransition(async () => {
-      await approveRequest(requestId, itemName);
+      await approveRequest(requestId, itemId, itemName);
       setStatus("approved");
       setIsConfirmOpen(false);
     });

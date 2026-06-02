@@ -4,10 +4,11 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 type RequestFormProps = {
+  itemId: string;
   itemName: string;
 };
 
-export default function RequestForm({ itemName }: RequestFormProps) {
+export default function RequestForm({ itemId, itemName }: RequestFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,6 +26,7 @@ export default function RequestForm({ itemName }: RequestFormProps) {
     const message = formData.get("message") as string;
 
     const { error } = await supabase.from("requests").insert({
+      item_id: itemId,
       item_name: itemName,
       requester_name: requesterName,
       requester_contact: requesterContact,

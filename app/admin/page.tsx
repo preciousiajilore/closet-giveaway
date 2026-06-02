@@ -5,6 +5,7 @@ export const dynamic = "force-dynamic";
 
 type ClothingRequest = {
   id: string;
+  item_id: string | null;
   item_name: string;
   requester_name: string;
   requester_contact: string;
@@ -149,6 +150,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
                   <div className="flex justify-start md:justify-end">
                     <ClaimButton
                       requestId={request.id}
+                      itemId={request.item_id}
                       itemName={request.item_name}
                       requestStatus={request.status}
                     />
