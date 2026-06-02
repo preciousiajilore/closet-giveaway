@@ -38,7 +38,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
             </h1>
 
             <p className="mt-4 text-sm leading-7 text-neutral-600 sm:text-base">
-              Add your admin key to the URL to view clothing requests.
+              Where's your wristband at? Add your admin key to the URL to review clothing requests.
             </p>
           </div>
         </section>
@@ -57,7 +57,7 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
         <section className="mx-auto max-w-3xl">
           <div className="glass-panel rounded-[2rem] p-8">
             <h1 className="text-3xl font-semibold tracking-[-0.04em]">
-              Something went wrong
+              oh chile, something went wrong
             </h1>
 
             <p className="mt-4 text-neutral-600">{error.message}</p>
@@ -88,8 +88,17 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
               </p>
             </div>
 
-            <div className="w-fit rounded-full bg-neutral-950 px-5 py-3 text-sm font-semibold text-white">
-              {requests.length} request{requests.length === 1 ? "" : "s"}
+            <div className="flex flex-col items-start gap-3 md:items-end">
+              <a
+                href={`/admin/items?key=${adminKey}`}
+                className="w-fit rounded-full border border-[#ddd2c4] bg-white px-5 py-3 text-sm font-semibold text-neutral-900 shadow-[0_10px_24px_rgba(88,70,54,0.12)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cdbba7] hover:shadow-[0_16px_30px_rgba(88,70,54,0.16)]"
+              >
+                Manage items
+              </a>
+
+              <div className="w-fit rounded-full bg-neutral-950 px-5 py-3 text-sm font-semibold text-white">
+                {requests.length} request{requests.length === 1 ? "" : "s"}
+              </div>
             </div>
           </div>
         </div>
