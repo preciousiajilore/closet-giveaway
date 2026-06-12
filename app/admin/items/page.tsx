@@ -214,6 +214,7 @@ export default async function AdminItemsPage({
                     </button>
                   </form>
                   <ArchiveItemButton
+                    key={`${item.id}-${item.status ?? "unknown"}`}
                     itemId={item.id}
                     itemName={item.name}
                     itemStatus={item.status}
