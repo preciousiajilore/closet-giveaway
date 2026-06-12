@@ -51,11 +51,16 @@ export default async function Home() {
             <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.06em] text-balance text-neutral-950 sm:text-6xl lg:text-7xl">
               Precious&apos; Closet Drop
             </h1>
-
-            <p className="max-w-md text-sm leading-7 text-neutral-600 sm:text-base">
+            <div className="max-w-md">
+            <p className="text-sm leading-7 text-neutral-600 sm:text-base">
               Browse the pieces I&apos;m giving away and request anything
               you&apos;d genuinely wear.
             </p>
+
+            <a href="/support" className="mt-4 inline-flex rounded-full border border-[#ebe4da] bg-white/70 px-5 py-3 text-sm font-semibold text-neutral-700 transition hover:bg-white">
+              Buy me a coffee
+            </a>
+            </div>
           </div>
         </div>
 
