@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Precious' Closet Giveaway",
+  title: "ReThread by Precious Ajilore",
   description: "A closet giveaway app built with Next.js and Supabase",
 };
 
