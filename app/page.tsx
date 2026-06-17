@@ -49,7 +49,7 @@ export default async function Home() {
 
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.06em] text-balance text-neutral-950 sm:text-6xl lg:text-7xl">
-              Precious&apos; Closet Drop
+              ReThread
             </h1>
             <div className="max-w-md">
             <p className="text-sm leading-7 text-neutral-600 sm:text-base">
