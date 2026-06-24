@@ -12,8 +12,7 @@ export default function SupportReturnPage() {
           </h1>
 
           <p className="mt-5 text-sm leading-7 text-neutral-600 sm:text-base">
-            Thank you for supporting this project. Your checkout session has
-            been completed or returned.
+            Your support payment was completed successfully. Thank you for supporting my project.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
