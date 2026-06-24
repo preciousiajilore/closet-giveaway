@@ -15,8 +15,8 @@ export default function SupportPage() {
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-600 sm:text-base">
             I built this closet giveaway app as a small full-stack project to
-            make sharing clothes easier. This embedded checkout is a
-            payments-focused feature I added to learn by building.
+            make sharing clothes easier. If you would like to support my work, you can buy me a coffee. Totally optional lol, I
+            just wanted to try out Stripe Checkout and see if I could embed it directly in the app.
           </p>
 
           <EmbeddedCoffeeCheckout />
